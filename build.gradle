@@ -121,5 +121,5 @@ bootJar{
 	from ("${asciidoctor.outputDir}/html5") {
 		into 'static/docs'
 	}
-	archiveFileName = 'petching.jar'
+	archiveFileName = 'econrich.jar'
 }
