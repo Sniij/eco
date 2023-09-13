@@ -15,10 +15,12 @@ import java.sql.Date;
 @Entity(name = "job_history")
 public class JobHistory implements Serializable {
 
-    @Id
+
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    private Employee employeeId;
+    private Employee employee;
+    @Id
+    private int employeeId = employee.getId();
 
     @Id
     @Column(name = "start_date", columnDefinition = "DATE NOT NULL")

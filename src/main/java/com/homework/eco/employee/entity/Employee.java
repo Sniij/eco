@@ -1,6 +1,5 @@
 package com.homework.eco.employee.entity;
 
-import com.homework.eco.audit.BaseEntity;
 import com.homework.eco.department.entity.Department;
 import com.homework.eco.job.entity.Job;
 import lombok.Builder;

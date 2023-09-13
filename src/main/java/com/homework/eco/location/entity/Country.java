@@ -20,4 +20,5 @@ public class Country {
     @ManyToOne
     @JoinColumn(name = "region_id")
     private Region regionId;
+
 }
