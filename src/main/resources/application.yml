@@ -33,6 +33,12 @@ spring:
         show_sql: true
         format_sql: true
 
+#    defer-datasource-initialization: true
+#  sql:
+#    init:
+#      mode: always
+#      data-locations: classpath:hr-schema-mysql.sql
+
 cloud:
   aws:
     credentials:
@@ -48,3 +54,26 @@ spring:
     import: "aws-parameterstore:"
     activate:
       on-profile: dev
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+
+cloud:
+  aws:
+    credentials:
+      accessKey:
+      secretKey:
+    region:
+      static:
