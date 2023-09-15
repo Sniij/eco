@@ -15,17 +15,8 @@ import java.sql.Date;
 @Entity(name = "job_history")
 public class JobHistory implements Serializable {
 
-
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
-    private Employee employee;
-    @Id
-    private int employeeId = employee.getId();
-
-    @Id
-    @Column(name = "start_date", columnDefinition = "DATE NOT NULL")
-    @DateTimeFormat(pattern = "yyyy-MM-DD")
-    private Date startDate;
+    @EmbeddedId
+    private JobHistoryId jobHistoryId;
 
     @Column(name = "end_date", columnDefinition = "DATE NOT NULL")
     @DateTimeFormat(pattern = "yyyy-MM-DD")

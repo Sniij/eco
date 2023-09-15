@@ -12,11 +12,11 @@ public class JobHistoryDto {
     @Setter
     @NoArgsConstructor
     public static class Response{
-        //private int employeeId;
+        private int employeeId;
         private Date startDate;
         private Date endDate;
-        //private String jobId;
-        //private int departmentId;
+        private String jobId;
+        private int departmentId;
 
     }
 }
