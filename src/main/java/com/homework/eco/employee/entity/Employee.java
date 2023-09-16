@@ -5,6 +5,7 @@ import com.homework.eco.job.entity.Job;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.sql.Date;
 
 
 @Getter
+@Setter
 @Entity(name = "employees")
 @NoArgsConstructor
 public class Employee{
@@ -29,7 +31,6 @@ public class Employee{
     private String lastName;
 
     @Column(length = 25, nullable = false)
-    @Email
     private String email;
 
     @Column(length = 20, name = "phone_number")

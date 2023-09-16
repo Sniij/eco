@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/job")
 public class JobController {
 
     private final JobService jobService;
@@ -29,7 +28,7 @@ public class JobController {
         this.jobHistoryMapper = jobHistoryMapper;
     }
 
-    @GetMapping("/history/{employeeId}")
+    @GetMapping("/employee/history/{employeeId}")
     public ResponseEntity getEmployeeHistory(
             @PathVariable("employeeId") int employeeId
     ){

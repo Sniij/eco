@@ -7,6 +7,8 @@ import com.homework.eco.location.entity.Country;
 import com.homework.eco.location.entity.Location;
 import org.mapstruct.Mapper;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface EmployeeMapper {
 
@@ -42,4 +44,6 @@ public interface EmployeeMapper {
 
         return detail;
     }
+
+    List<EmployeeDto.Detail> entityListToDetailList( List<Employee> employeeList);
 }
