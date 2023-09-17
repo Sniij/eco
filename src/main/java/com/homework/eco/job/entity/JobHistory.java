@@ -29,5 +29,4 @@ public class JobHistory implements Serializable {
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department departmentId;
-
 }

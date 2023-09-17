@@ -2,7 +2,6 @@ package com.homework.eco.restDocs.global.helper;
 
 import com.google.gson.Gson;
 import org.springframework.http.MediaType;
-import org.springframework.restdocs.headers.HeaderDescriptor;
 import org.springframework.restdocs.payload.FieldDescriptor;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.restdocs.request.ParameterDescriptor;
@@ -24,7 +23,7 @@ public interface ControllerTestHelper<T> {
 
     default RequestBuilder patchRequestBuilder(String uri, long resourceId, String param) {
         return patch(uri, resourceId)
-                .param(param)
+                .param("increment",param)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 

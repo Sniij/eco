@@ -1,5 +1,6 @@
 package com.homework.eco.location.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -31,5 +32,14 @@ public class Location {
     @JoinColumn(name = "country_id")
     private Country countryId;
 
+    @Builder
+    public Location(int id, String streetAddress, String postalCode, String city, String stateProvince, Country countryId) {
+        this.id = id;
+        this.streetAddress = streetAddress;
+        this.postalCode = postalCode;
+        this.city = city;
+        this.stateProvince = stateProvince;
+        this.countryId = countryId;
+    }
 
 }

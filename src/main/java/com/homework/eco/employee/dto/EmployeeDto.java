@@ -70,6 +70,7 @@ public class EmployeeDto {
         private int managerId;
         private int departmentId;
 
+        @Builder
         public Patch(int employeeId, String firstName, String lastName, String email, String phoneNumber, String jobId, BigDecimal salary, BigDecimal commissionPct, int managerId, int departmentId, Date hireDate) {
             this.employeeId = employeeId;
             this.firstName = firstName;

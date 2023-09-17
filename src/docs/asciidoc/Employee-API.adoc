@@ -1,0 +1,100 @@
+[[Employee-API]]
+= Employee API
+== Employee Controller
+
+=== Employee 상세조회
+[discrete]
+==== `특정 사원의 정보를 조회할 수 있습니다.`
+[discrete]
+==== `Request`
+[source,http]
+----
+GET: /employee/{employeeId}
+----
+.path-parameters
+include::{snippets}/get-employee/path-parameters.adoc[]
+
+[discrete]
+==== `Response`
+.response-body
+include::{snippets}/get-employee/response-body.adoc[]
+.response-fields
+include::{snippets}/get-employee/response-fields.adoc[]
+
+
+[discrete]
+==== `Request Summary`
+include::{snippets}/get-employee/http-request.adoc[]
+
+[discrete]
+==== `Response Summary`
+include::{snippets}/get-employee/http-response.adoc[]
+
+---
+
+=== Employee 정보 수정
+[discrete]
+==== `특정 사원의 정보를 수정할 수 있습니다.`
+[discrete]
+==== `Request`
+[source,http]
+----
+PATCH: /employee
+----
+.request-body
+include::{snippets}/patch-employee/request-body.adoc[]
+.request-fields
+include::{snippets}/patch-employee/response-fields.adoc[]
+
+
+
+[discrete]
+==== `Response`
+.response-body
+include::{snippets}/patch-employee/response-body.adoc[]
+.response-fields
+include::{snippets}/patch-employee/response-fields.adoc[]
+
+
+[discrete]
+==== `Request Summary`
+include::{snippets}/patch-employee/http-request.adoc[]
+
+[discrete]
+==== `Response Summary`
+include::{snippets}/patch-employee/http-response.adoc[]
+
+---
+
+=== Employee 임금 수정(부서)
+[discrete]
+==== `특정 부서 사원들의 임금을 수정할 수 있습니다.`
+[discrete]
+==== `Request`
+[source,http]
+----
+PATCH: /employee/{departmentId}
+----
+.path-parameters
+include::{snippets}/patch-employee-salary/path-parameters.adoc[]
+.request-parameters
+include::{snippets}/patch-employee-salary/request-parameters.adoc[]
+
+
+[discrete]
+==== `Response`
+.response-body
+include::{snippets}/patch-employee-salary/response-body.adoc[]
+.response-fields
+include::{snippets}/patch-employee-salary/response-fields.adoc[]
+
+
+[discrete]
+==== `Request Summary`
+include::{snippets}/patch-employee-salary/http-request.adoc[]
+
+[discrete]
+==== `Response Summary`
+include::{snippets}/patch-employee-salary/http-response.adoc[]
+
+---

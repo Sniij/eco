@@ -2,6 +2,7 @@ package com.homework.eco.department.entity;
 
 import com.homework.eco.employee.entity.Employee;
 import com.homework.eco.location.entity.Location;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -28,4 +29,11 @@ public class Department {
     @JoinColumn(name = "location_id")
     private Location locationId;
 
+    @Builder
+    public Department(int id, String departmentName, Employee managerId, Location locationId) {
+        this.id = id;
+        this.departmentName = departmentName;
+        this.managerId = managerId;
+        this.locationId = locationId;
+    }
 }
