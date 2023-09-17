@@ -97,6 +97,11 @@ public class EmployeeService {
         return employeeRepository.findEmployeeListByDepartmentId(departmentId);
     }
 
+
+    /**
+     * Employee List 를 저장시키는 메서드
+     * arguments : Employee List
+     */
     public List<Employee> updateEmployeeList(List<Employee> employeeList) {
         return employeeRepository.saveAll(employeeList);
     }

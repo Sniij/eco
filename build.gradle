@@ -73,7 +73,13 @@ dependencies {
 	// Entity 와 DTO 간 데이터 구조 변환을 위한 dependency
 	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
-	
+
+	// GSON 라이브러리 : Java 객체 <=> JSON
+	implementation 'com.google.code.gson:gson'
+
+	// JSONObject 와 JSONArray 를 사용하기 위한 라이브러리
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
 	// security
 /*	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'*/
