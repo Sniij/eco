@@ -45,7 +45,7 @@ public interface EmployeeControllerTestHelper extends ControllerTestHelper{
 
     }
 
-    default List<ParameterDescriptor>         getDepartmentRequestParameterDescriptor() {
+    default List<ParameterDescriptor> getDepartmentRequestParameterDescriptor() {
         return Arrays.asList(
                 parameterWithName("increment").description("임금 상승 비율")
         );

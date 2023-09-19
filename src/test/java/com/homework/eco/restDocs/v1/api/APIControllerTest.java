@@ -69,11 +69,11 @@ public class APIControllerTest implements APIControllerTestHelper {
         APIDto.Parking.Header header = StubData.MockParking.getParkingHeader();
         List<APIDto.Parking.Body> body = StubData.MockParking.getParkingBody();
 
-        
+        given(apiService.getJsonObjectByRequestURI(Mockito.any(URL.class))).willReturn(response);
         given(apiService.getURLParkingAPI(Mockito.anyInt(),Mockito.anyInt(),Mockito.anyString())).willReturn(url);
-        given(apiService.getParkingHeadJSONArray(Mockito.any(URL.class))).willReturn(head);
+        given(apiService.getParkingHeadJSONArray(Mockito.any(JSONObject.class))).willReturn(head);
         given(apiService.getParkingHeadObject(Mockito.any(JSONArray.class))).willReturn(jsonHead);
-        given(apiService.getParkingRowJSONArray(Mockito.any(URL.class))).willReturn(row);
+        given(apiService.getParkingRowJSONArray(Mockito.any(JSONObject.class))).willReturn(row);
         given(apiService.makeParkingBodyByJSONArray(Mockito.any(JSONArray.class))).willReturn(body);
 
         String page = "1";

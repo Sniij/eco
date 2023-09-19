@@ -78,8 +78,8 @@ public class APIServiceImpl implements APIService{
         return jsonArray.toJSONString();
     }
 
-    public JSONArray getParkingHeadJSONArray(URL requestURL) throws URISyntaxException, ParseException {
-        JSONObject jsonObject = getJsonObjectByRequestURI(requestURL);
+    public JSONArray getParkingHeadJSONArray(JSONObject jsonObject) throws URISyntaxException, ParseException {
+        //JSONObject jsonObject = getJsonObjectByRequestURI(requestURL);
         JSONArray jsonArray = (JSONArray) jsonObject.get("ParkingPlace");
         JSONObject head = (JSONObject) jsonArray.get(0);
         JSONArray jsonArray2 = (JSONArray) head.get("head");
@@ -87,8 +87,8 @@ public class APIServiceImpl implements APIService{
         return jsonArray2;
     }
 
-    public JSONArray getParkingRowJSONArray(URL requestURL) throws URISyntaxException, ParseException {
-        JSONObject jsonObject = getJsonObjectByRequestURI(requestURL);
+    public JSONArray getParkingRowJSONArray(JSONObject jsonObject) throws URISyntaxException, ParseException {
+        //JSONObject jsonObject = getJsonObjectByRequestURI(requestURL);
         JSONArray jsonArray = (JSONArray) jsonObject.get("ParkingPlace");
         JSONObject head = (JSONObject) jsonArray.get(1);
         JSONArray jsonArray2 = (JSONArray) head.get("row");

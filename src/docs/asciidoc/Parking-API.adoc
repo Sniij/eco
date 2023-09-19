@@ -33,4 +33,9 @@ include::{snippets}/get-parking/http-request.adoc[]
 ==== `Response Summary`
 include::{snippets}/get-parking/http-response.adoc[]
 
+
+=== Error code
+[discrete]
+include::{snippets}/get-parking/error-code.adoc[]
+
 ---

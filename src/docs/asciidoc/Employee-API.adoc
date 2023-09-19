@@ -41,10 +41,12 @@ include::{snippets}/get-employee/http-response.adoc[]
 ----
 PATCH: /employee
 ----
+
 .request-body
 include::{snippets}/patch-employee/request-body.adoc[]
+
 .request-fields
-include::{snippets}/patch-employee/response-fields.adoc[]
+include::{snippets}/patch-employee/request-fields.adoc[]
 
 
 

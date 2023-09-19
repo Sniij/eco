@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class APIController {
@@ -33,12 +34,19 @@ public class APIController {
 
         URL requestURL = new URL(apiService.getURLParkingAPI(page, size,address));
 
-        JSONArray head = apiService.getParkingHeadJSONArray(requestURL);
+        JSONObject httpResponse = apiService.getJsonObjectByRequestURI(requestURL);
+
+        if(httpResponse.containsKey("RESULT")){
+
+            return ResponseEntity.ok(httpResponse);
+        }
+
+        JSONArray head = apiService.getParkingHeadJSONArray(httpResponse);
         JSONObject jsonHead = apiService.getParkingHeadObject(head);
 
         APIDto.Parking.Header header = new APIDto.Parking.Header(jsonHead);
 
-        JSONArray row = apiService.getParkingRowJSONArray(requestURL);
+        JSONArray row = apiService.getParkingRowJSONArray(httpResponse);
         List<APIDto.Parking.Body> body = apiService.makeParkingBodyByJSONArray(row);
 
         JSONObject response = new JSONObject();
