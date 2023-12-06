@@ -1,6 +1,6 @@
 [[Parking-API]]
 = Parking API
-== Parking Controller
+== RestPark Controller
 
 === 주차장 검색 API
 [discrete]
@@ -11,7 +11,7 @@
 ==== `Request`
 [source,http]
 ----
-GET: /parking
+GET: /parking?page=1&size=2&address=군포시
 ----
 .request-parameters
 include::{snippets}/get-parking/request-parameters.adoc[]
@@ -33,9 +33,5 @@ include::{snippets}/get-parking/http-request.adoc[]
 ==== `Response Summary`
 include::{snippets}/get-parking/http-response.adoc[]
 
-
-=== Error code
-[discrete]
-include::{snippets}/get-parking/error-code.adoc[]
 
 ---

@@ -1,6 +1,5 @@
 package com.homework.eco.job.service;
 
-import com.homework.eco.employee.entity.Employee;
 import com.homework.eco.exception.BusinessLogicException;
 import com.homework.eco.exception.ExceptionCode;
 import com.homework.eco.job.entity.Job;

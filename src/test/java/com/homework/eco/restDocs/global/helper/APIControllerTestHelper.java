@@ -26,13 +26,14 @@ public interface APIControllerTestHelper extends ControllerTestHelper{
 
     default List<FieldDescriptor> getParkingResponseDescriptors() {
 
-        String header = "header.";
-        String body = "body[].";
+        String header = "pageInfo.";
+        String body = "data[].";
 
         return List.of(
-                fieldWithPath(header.concat("totalCount")).type(JsonFieldType.NUMBER).description("검색한 데이터의 총갯수"),
-                fieldWithPath(header.concat("code")).type(JsonFieldType.STRING).description("검색의 상태코드"),
-                fieldWithPath(header.concat("massage")).type(JsonFieldType.STRING).description("검색의 상태메세지"),
+                fieldWithPath(header.concat("totalElements")).type(JsonFieldType.NUMBER).description("검색한 데이터의 총갯수"),
+                fieldWithPath(header.concat("totalPages")).type(JsonFieldType.NUMBER).description("검색한 데이터의 총 페이지수"),
+                fieldWithPath(header.concat("page")).type(JsonFieldType.NUMBER).description("요청한 페이지"),
+                fieldWithPath(header.concat("size")).type(JsonFieldType.NUMBER).description("요청한 페이지 크기"),
 
                 fieldWithPath(body.concat("parkingName")).type(JsonFieldType.STRING).description("주차장명"),
                 fieldWithPath(body.concat("parkingDiv")).type(JsonFieldType.STRING).description("주차장 구분"),

@@ -14,11 +14,11 @@ endif::[]
 
 Manki Cho <dokeycho@gmail.com>
 
-v1.0.1, 2023.09
+v1.1.0, 2023.12 - Refactoring V
 
 ***
 
-CAUTION: 현 문서는 ECO&RICH 사전과제로 만든 API에 대한 문서입니다. +
+CAUTION: 현 문서는 공공데이터 포탈의 데이터로 만든 API 문서입니다. +
 이 외 문의사항은 관리자에게 문의해주세요.
 
 ***
