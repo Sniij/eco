@@ -2,50 +2,27 @@ server:
   port: 8888
 spring:
   profiles:
-    active: dev
-aws:
-  paramstore:
-    enabled: true
-    prefix: /spring-boot-aws/econrich
-    defaultContext: ${spring.profiles.active}
-    profileSeparator: _
+    active: local
 
 ---
 
 spring:
   config:
-    import: "aws-parameterstore:"
     activate:
       on-profile: local
-  datasource:
-    url:
-    username:
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:/db/migration
+    schemas: eco
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
-
-#    defer-datasource-initialization: true
-#  sql:
-#    init:
-#      mode: always
-#      data-locations: classpath:hr-schema-mysql.sql
-
-cloud:
-  aws:
-    credentials:
-      accessKey:
-      secretKey:
-    region:
-      static:
+      ddl-auto: validate
+    generate-ddl: false
+    show-sql: false
+    open-in-view: false
 
 ---
 
@@ -59,16 +36,19 @@ spring:
     username:
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:/db/migration
+    schemas: eco
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
+    generate-ddl: false
     show-sql: false
-    properties:
-      hibernate:
-        show_sql: false
-        format_sql: false
+    open-in-view: false
 
 cloud:
   aws:

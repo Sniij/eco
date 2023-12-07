@@ -27,7 +27,7 @@ repositories {
 
 ext {
 	// springCloudVersion setting
-	set('springCloudVersion', "2021.0.8")
+	set('springCloudVersion', "2021.0.7")
 	// API 문서 스니펫이 생성될 경로 지정
 	snippetsDir = file('build/generated-snippets')
 }
@@ -80,9 +80,9 @@ dependencies {
 	// JSONObject 와 JSONArray 를 사용하기 위한 라이브러리
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 
-	// security
-/*	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'*/
+	// Flyway 사용을 위한 dependency
+	implementation 'org.flywaydb:flyway-core:9.22.1'
+	implementation 'org.flywaydb:flyway-mysql:9.22.1'
 }
 
 tasks.named('test') {
@@ -123,7 +123,6 @@ build {
 	dependsOn copyDocument
 }
 
-// jar file name 변경
 bootJar{
 	// bootJar task 실행 전에 copyDocument task 가 실행되도록 의존성을 설정
 	dependsOn copyDocument
@@ -131,5 +130,7 @@ bootJar{
 	from ("${asciidoctor.outputDir}/html5") {
 		into 'static/docs'
 	}
-	archiveFileName = 'econrich.jar'
+	// jar file name 변경
+
+	archiveFileName = 'eco.jar'
 }
